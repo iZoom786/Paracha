@@ -1,0 +1,141 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Integration</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+
+<style>
+body{
+    font-family:Inter,sans-serif;
+    background:#0f172a;
+    color:#fff;
+    margin:0;
+}
+
+.header{
+    background:#131921;
+    padding:20px 40px;
+}
+
+.header h1{
+    margin:0;
+    color:#ff9900;
+}
+
+.container{
+    max-width:1400px;
+    margin:auto;
+    padding:30px;
+}
+
+.card{
+    background:#1e293b;
+    border-radius:16px;
+    padding:25px;
+}
+
+pre{
+    background:#020617;
+    padding:20px;
+    border-radius:12px;
+    overflow:auto;
+    color:#93c5fd;
+    font-size:14px;
+    line-height:1.6;
+}
+
+.info{
+    margin-bottom:20px;
+    padding:15px;
+    background:#0f766e;
+    border-radius:10px;
+}
+
+.footer{
+    text-align:center;
+    padding:20px;
+    color:#94a3b8;
+}
+</style>
+</head>
+
+<body>
+
+<div class="header">
+    <h1>Programming SDK</h1>
+</div>
+
+<div class="container">
+
+<div class="info">
+Kafka Bootstrap Server:
+<strong>161.97.112.186:9094</strong><br>
+Topic:
+<strong>coolify-test-topic</strong>
+</div>
+
+<div class="card">
+
+<h2>Python Kafka Producer</h2>
+
+<pre>
+import json
+import time
+from kafka import KafkaProducer
+from kafka.errors import KafkaError
+
+BOOTSTRAP_SERVERS = ['161.97.112.186:9094']
+TOPIC_NAME = 'coolify-test-topic'
+
+def json_serializer(data):
+    return json.dumps(data).encode('utf-8')
+
+def on_send_success(record_metadata):
+    print(f"Topic: {record_metadata.topic}")
+    print(f"Partition: {record_metadata.partition}")
+    print(f"Offset: {record_metadata.offset}")
+
+def on_send_error(excp):
+    print(f"Failed: {excp}")
+
+producer = KafkaProducer(
+    bootstrap_servers=BOOTSTRAP_SERVERS,
+    value_serializer=json_serializer,
+    acks='all',
+    retries=3
+)
+
+for i in range(1, 6):
+    payload = {
+        'id': i+15,
+        'message': f'Hello from Python to Coolify Kafka! Test message {i+15}',
+        'timestamp': time.time()
+    }
+
+    producer.send(
+        TOPIC_NAME,
+        value=payload
+    ).add_callback(
+        on_send_success
+    ).add_errback(
+        on_send_error
+    )
+
+producer.flush()
+producer.close()
+</pre>
+
+</div>
+
+</div>
+
+<div class="footer">
+Paracha Cloud © 2026 — By Asif Iqbal Paracha
+</div>
+
+</body>
+</html>
+```
