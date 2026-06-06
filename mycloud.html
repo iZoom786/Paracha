@@ -1,0 +1,297 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Paracha Cloud</title>
+
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root {
+    --aws-orange: #ff9900;
+    --aws-dark: #131921;
+    --aws-blue: #232f3e;
+    --bg: #f8fafc;
+    --card-bg: #ffffff;
+    --border: #e5e7eb;
+    --text: #111827;
+    --muted: #6b7280;
+    --shadow: 0 8px 25px rgba(0,0,0,.08);
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Inter", sans-serif;
+    background: var(--bg);
+    color: var(--text);
+}
+
+/* AWS Style Top Bar */
+.topbar {
+    background: var(--aws-dark);
+    height: 64px;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 0 32px;
+    color: white;
+}
+
+.logo {
+    font-size: 26px;
+    font-weight: 800;
+}
+
+.logo span {
+    color: var(--aws-orange);
+}
+
+.user {
+    font-size: 14px;
+    color: #d1d5db;
+}
+
+/* Hero Section */
+.hero {
+    background: linear-gradient(
+        135deg,
+        #232f3e,
+        #1e293b
+    );
+    color: white;
+    padding: 60px 40px;
+}
+
+.hero h1 {
+    font-size: 48px;
+    margin-bottom: 10px;
+}
+
+.hero p {
+    font-size: 18px;
+    color: #cbd5e1;
+}
+
+/* Services */
+.container {
+    max-width: 1400px;
+    margin: auto;
+    padding: 40px 20px;
+}
+
+.section-title {
+    font-size: 28px;
+    font-weight: 700;
+    margin-bottom: 25px;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    gap: 25px;
+}
+
+.card {
+    background: var(--card-bg);
+    border-radius: 18px;
+    padding: 28px;
+    box-shadow: var(--shadow);
+    border: 1px solid var(--border);
+    transition: all .25s ease;
+}
+
+.card:hover {
+    transform: translateY(-6px);
+    box-shadow: 0 15px 35px rgba(0,0,0,.12);
+}
+
+.icon {
+    width: 60px;
+    height: 60px;
+    border-radius: 14px;
+    background: rgba(255,153,0,.12);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-size: 28px;
+    margin-bottom: 18px;
+}
+
+.card h3 {
+    font-size: 22px;
+    margin-bottom: 10px;
+}
+
+.card p {
+    color: var(--muted);
+    line-height: 1.6;
+    margin-bottom: 20px;
+}
+
+.btn {
+    display: inline-block;
+    text-decoration: none;
+    background: var(--aws-orange);
+    color: white;
+    padding: 12px 20px;
+    border-radius: 10px;
+    font-weight: 600;
+    transition: all .2s ease;
+}
+
+.btn:hover {
+    opacity: .9;
+}
+
+/* Footer */
+.footer {
+    margin-top: 50px;
+    background: var(--aws-dark);
+    color: #d1d5db;
+    text-align: center;
+    padding: 24px;
+    font-size: 14px;
+}
+
+.footer strong {
+    color: white;
+}
+
+.badge {
+    display: inline-block;
+    margin-top: 8px;
+    background: rgba(255,153,0,.15);
+    color: var(--aws-orange);
+    padding: 5px 10px;
+    border-radius: 20px;
+    font-size: 12px;
+}
+</style>
+</head>
+
+<body>
+
+<div class="topbar">
+    <div class="logo">
+        Paracha <span>Cloud</span>
+    </div>
+    <div class="user">
+        Enterprise Data , Streaming , Analytics and  AI Platform
+    </div>
+</div>
+
+<section class="hero">
+    <h1>Paracha Cloud</h1>
+    <p>
+        Unified Platform for Storage, Streaming, Analytics,
+        SQL Development, AI Applications and DevOps Operations.
+    </p>
+</section>
+
+<div class="container">
+
+    <div class="section-title">
+        Services
+    </div>
+
+    <div class="grid">
+
+        <div class="card">
+            <div class="icon">🗄️</div>
+            <h3>MY Own S3</h3>
+            <p>
+                MinIO Object Storage for data lake, backups,
+                files and Iceberg warehouse storage.
+            </p>
+            <a class="btn" target="_blank"
+               href="http://161.97.112.186:9001/">
+               Open Storage
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">📡</div>
+            <h3>Streaming</h3>
+            <p>
+                Kafka UI and event streaming platform for
+                real-time ingestion and messaging.
+            </p>
+            <a class="btn" target="_blank"
+               href="http://161.97.112.186:8083/">
+               Open Streaming
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🧮</div>
+            <h3>SQL Workshop</h3>
+            <p>
+                CloudBeaver SQL workspace for StarRocks,
+                PostgreSQL and data engineering tasks.
+            </p>
+            <a class="btn" target="_blank"
+               href="http://161.97.112.186:8084/">
+               Open SQL Workshop
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">🤖</div>
+            <h3>LLM Lab</h3>
+            <p>
+                AI Playground powered by Open WebUI
+                for experimentation and GenAI workflows.
+            </p>
+            <a class="btn" target="_blank"
+               href="http://161.97.112.186:3000/">
+               Open LLM Lab
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">📊</div>
+            <h3>Analytics</h3>
+            <p>
+                Apache Superset dashboards, reporting,
+                KPI monitoring and business intelligence.
+            </p>
+            <a class="btn" target="_blank"
+               href="http://superset-gfc1jw52qhfvtoko5aaln7yy.161.97.112.186.sslip.io/">
+               Open Analytics
+            </a>
+        </div>
+
+        <div class="card">
+            <div class="icon">⚙️</div>
+            <h3>DevOps</h3>
+            <p>
+                Coolify platform for application deployment,
+                infrastructure automation and operations.
+            </p>
+            <a class="btn" target="_blank"
+               href="http://161.97.112.186:8000/">
+               Open DevOps
+            </a>
+        </div>
+
+    </div>
+</div>
+
+<div class="footer">
+    <strong>Paracha Cloud</strong><br>
+    By Asif Iqbal Paracha<br>
+    All Rights Reserved © 2026
+    <div class="badge">
+        Data & Business Intelligence Architect
+    </div>
+</div>
+
+</body>
+</html>
+```
