@@ -20,7 +20,8 @@
     --shadow: 0 8px 25px rgba(0,0,0,.08);
 }
 
- {
+/* Fixed missing universal selector */
+* {
     margin: 0;
     padding: 0;
     box-sizing: border-box;
@@ -93,7 +94,7 @@ body {
 
 .grid {
     display: grid;
-    grid-template-columns: repeat(auto-fit,minmax(280px,1fr));
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
     gap: 25px;
 }
 
@@ -182,7 +183,7 @@ body {
         Paracha <span>Cloud</span>
     </div>
     <div class="user">
-        Enterprise Data , Streaming , Analytics and  AI Platform
+        Enterprise Data, Streaming, Analytics and AI Platform
     </div>
 </div>
 
@@ -200,6 +201,7 @@ body {
         Services
     </div>
 
+    <!-- START OF THE GRID CONTAINER -->
     <div class="grid">
 
         <div class="card">
@@ -209,9 +211,8 @@ body {
                 MinIO Object Storage for data lake, backups,
                 files and Iceberg warehouse storage.
             </p>
-            <a class="btn" target="_blank"
-               href="http://161.97.112.186:9001/">
-               Open Storage
+            <a class="btn" target="_blank" href="http://161.97.112.186:9001/">
+                Open Storage
             </a>
         </div>
 
@@ -222,9 +223,8 @@ body {
                 Kafka UI and event streaming platform for
                 real-time ingestion and messaging.
             </p>
-            <a class="btn" target="_blank"
-               href="http://161.97.112.186:8083/">
-               Open Streaming
+            <a class="btn" target="_blank" href="http://161.97.112.186:8083/">
+                Open Streaming
             </a>
         </div>
 
@@ -235,22 +235,20 @@ body {
                 CloudBeaver SQL workspace for StarRocks,
                 PostgreSQL and data engineering tasks.
             </p>
-            <a class="btn" target="_blank"
-               href="http://161.97.112.186:8084/">
-               Open SQL Workshop
+            <a class="btn" target="_blank" href="http://161.97.112.186:8084/">
+                Open SQL Workshop
             </a>
         </div>
 
-            <div class="card">
+        <div class="card">
             <div class="icon">🧮</div>
             <h3>NoSQL Sandbox</h3>
             <p>
                 Build Apps With Advance NoSQL Features 
                 using Mongo DB Document Database. 
             </p>
-            <a class="btn" target="_blank"
-               href="https://cloud.mongodb.com/v2/5d5f9b89a6f239a57d6567ee#/clusters/">
-               Monogo DB Atlas
+            <a class="btn" target="_blank" href="https://cloud.mongodb.com/v2/5d5f9b89a6f239a57d6567ee#/clusters/">
+                MongoDB Atlas
             </a>
         </div>
 
@@ -261,9 +259,8 @@ body {
                 AI Playground powered by Open WebUI
                 for experimentation and GenAI workflows.
             </p>
-            <a class="btn" target="_blank"
-               href="http://161.97.112.186:3000/">
-               Open LLM Lab
+            <a class="btn" target="_blank" href="http://161.97.112.186:3000/">
+                Open LLM Lab
             </a>
         </div>
 
@@ -274,22 +271,20 @@ body {
                 Apache Superset dashboards, reporting,
                 KPI monitoring and business intelligence.
             </p>
-            <a class="btn" target="_blank"
-               href="http://superset-gfc1jw52qhfvtoko5aaln7yy.161.97.112.186.sslip.io/">
-               Open Analytics
+            <a class="btn" target="_blank" href="http://superset-gfc1jw52qhfvtoko5aaln7yy.161.97.112.186.sslip.io/">
+                Open Analytics
             </a>
         </div>
 
-         <div class="card">
+        <div class="card">
             <div class="icon">🤖</div>
             <h3>Agentic AI</h3>
             <p>
                 AI Agentic Playground Powered by Flowise
                 for experimentation and Agentic Flows.
             </p>
-            <a class="btn" target="_blank"
-               href="https://cloud.flowiseai.com/">
-               Agentic Pipeline
+            <a class="btn" target="_blank" href="https://cloud.flowiseai.com/">
+                Agentic Pipeline
             </a>
         </div>
 
@@ -300,37 +295,42 @@ body {
                 Coolify platform for application deployment,
                 infrastructure automation and operations.
             </p>
-            <a class="btn" target="_blank"
-               href="http://161.97.112.186:8000/">
-               Open DevOps
+            <a class="btn" target="_blank" href="http://161.97.112.186:8000/">
+                Open DevOps
             </a>
         </div>
-        <div class="card"> <div class="icon">🛢️</div>
-         <h3>Hybrid Transactional and Analytical Processing</h3> 
+
+        <div class="card"> 
+            <div class="icon">🛢️</div>
+            <h3>Hybrid Transactional and Analytical Processing</h3> 
             <p> 
-                OLTP (Online Transactional Processing) & OLAP (Online Analytical Processing) on a Single TiDB</p> 
+                OLTP (Online Transactional Processing) & OLAP (Online Analytical Processing) on a Single TiDB
+            </p> 
             <a class="btn" target="_blank" href="https://tidbcloud.com/tidbs/10156638282241866985/overview?orgId=1372813089209272317/"> Advance HTAP</a> 
         </div>
 
-    </div>
-       <div class="card"> <div class="icon">🔑</div>
-         <h3>Identity Management and Edge Functions</h3> 
+        <!-- FIXED: Moved the last two cards inside the .grid container -->
+        <div class="card"> 
+            <div class="icon">🔑</div>
+            <h3>Identity Management and Edge Functions</h3> 
             <p> 
-                Complete Identity Access Management and Edge Functions Deployment using Supabase and Type Script.</p> 
+                Complete Identity Access Management and Edge Functions Deployment using Supabase and TypeScript.
+            </p> 
             <a class="btn" target="_blank" href="a.html"> IAM and Edge Functions</a> 
         </div>
 
-        <div class="card"> <div class="icon">🔌</div>
-         <h3>Integration</h3> 
+        <div class="card"> 
+            <div class="icon">🔌</div>
+            <h3>Integration</h3> 
             <p> 
-                Kafka Streaming, Data Lake, Artificial Intelligence Integration
-                using Python. </p> 
+                Kafka Streaming, Data Lake, Artificial Intelligence Integration using Python.
+            </p> 
             <a class="btn" target="_blank" href="a.html"> Programming SDK </a> 
         </div>
 
+    </div> 
+    <!-- END OF THE GRID CONTAINER -->
 
-  
-    
 </div>
 
 <div class="footer">
@@ -344,4 +344,3 @@ body {
 
 </body>
 </html>
-```
